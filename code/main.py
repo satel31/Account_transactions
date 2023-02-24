@@ -1,7 +1,13 @@
-from utils import get_data, sort, reformat_data
+from code.utils import Data, ReformattedData, main
 
 PATH = 'data.json'
 
-text = get_data(PATH)
-reformatted_text = reformat_data(text)
-sorted_text = sort(reformatted_text)
+data = Data(PATH)
+text = data.get_data()
+new_text = ReformattedData(text)
+reformatted_text = new_text.reformat_data()
+final_output = main(reformatted_text)[:5]
+
+for operation in final_output:
+    print(operation)
+    print()
