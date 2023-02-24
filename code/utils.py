@@ -18,7 +18,7 @@ class Data:
 
 
 class ReformattedData:
-    def __init__(self, data):
+    def __init__(self, data: list):
         self.data = data
 
     def sort(self) -> list:
@@ -41,7 +41,9 @@ class ReformattedData:
     def __repr__(self):
         return f'Python Data: {self.data}'
 
-def main(data):
+def main(data: list) -> list:
+    """Main function"""
+
     last_operations = []
     for dictionary in data:
         if 'state' in dictionary.keys():
